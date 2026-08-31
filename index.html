@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MadhWai — Where Food Brings Us Together</title>
+<meta name="description" content="Authentic Indian street food in fifteen minutes, and digital tools, legal identity and a safety net for the vendors who make it." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+  :root {
+    --paper:      #FBF6EC;
+    --surface:    #FFFFFF;
+    --surface-2:  #F5EEDD;
+    --ink:        #1C2B22;
+    --ink-soft:   #4C5B51;
+    --brand:      #1C6B3F;
+    --brand-deep: #114429;
+    --accent:     #F4C430;
+    --accent-deep:#CF9A16;
+    --line:       #E4DAC4;
+    --line-soft:  #EDE5D2;
+    --shadow:     18px 24px 48px -28px rgba(28,43,34,.45);
+
+    --maxw: 1140px;
+    --step--1: .84rem;
+    --step-0:  1rem;
+    --step-1:  1.15rem;
+    --step-2:  1.4rem;
+    --step-3:  1.85rem;
+    --step-4:  2.4rem;
+
+    --f-display: "Baloo 2", "Trebuchet MS", sans-serif;
+    --f-body:    "Hanken Grotesk", system-ui, -apple-system, Segoe UI, sans-serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #121712;
+      --surface:    #1A211A;
+      --surface-2:  #202821;
+      --ink:        #ECE6D4;
+      --ink-soft:   #A6B0A2;
+      --brand:      #57BC80;
+      --brand-deep: #93D6AC;
+      --accent:     #F4C430;
+      --accent-deep:#F7D66B;
+      --line:       #2E372E;
+      --line-soft:  #262E26;
+      --shadow:     18px 24px 48px -30px rgba(0,0,0,.7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #121712;
+    --surface:    #1A211A;
+    --surface-2:  #202821;
+    --ink:        #ECE6D4;
+    --ink-soft:   #A6B0A2;
+    --brand:      #57BC80;
+    --brand-deep: #93D6AC;
+    --accent:     #F4C430;
+    --accent-deep:#F7D66B;
+    --line:       #2E372E;
+    --line-soft:  #262E26;
+    --shadow:     18px 24px 48px -30px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  h1, h2, h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    line-height: 1.12;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+  }
+  .mark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -.01em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .mark .a { color: var(--brand); }
+  .mark .b { color: var(--accent-deep); }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  nav a {
+    text-decoration: none;
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    letter-spacing: .01em;
+  }
+  nav a:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .01em;
+    padding: 11px 20px;
+    border-radius: 9px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-primary {
+    background: var(--brand);
+    color: #FBF6EC;
+  }
+  .btn-primary:hover { background: var(--brand-deep); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+
+  @media (max-width: 860px) {
+    nav a { display: none; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 76px 0 34px;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(3.2rem, 8vw, 5.1rem);
+    line-height: .95;
+    letter-spacing: -.02em;
+  }
+  .wordmark .a { color: var(--brand); }
+  .wordmark .b { color: var(--accent-deep); }
+  .smile {
+    display: block;
+    width: clamp(150px, 22vw, 210px);
+    height: auto;
+    margin: 6px 0 26px 2px;
+    color: var(--accent);
+  }
+  .hero h1 {
+    font-size: var(--step-3);
+    font-weight: 600;
+    max-width: 20ch;
+    margin-bottom: 18px;
+  }
+  .hero p.lede {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    max-width: 42ch;
+    margin: 0 0 30px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .tagline {
+    margin-top: 26px;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    letter-spacing: .02em;
+  }
+
+  /* stacked stall cards */
+  .basket {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+  .basket-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--f-mono);
+    font-size: .74rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--brand);
+  }
+  .live::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 60%, transparent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 55%, transparent); }
+    70% { box-shadow: 0 0 0 9px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .stall {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .stall:last-of-type { border-bottom: 0; }
+  .dot {
+    width: 34px; height: 34px;
+    flex: none;
+    border-radius: 9px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--brand);
+  }
+  .stall .name { font-weight: 600; font-size: var(--step-0); }
+  .stall .meta { font-size: .78rem; color: var(--ink-soft); }
+  .stall .price { margin-left: auto; font-family: var(--f-mono); font-size: .84rem; }
+  .basket-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--line);
+    font-family: var(--f-mono);
+    font-size: .82rem;
+  }
+  .basket-foot .eta {
+    background: var(--accent);
+    color: #1C2B22;
+    padding: 5px 11px;
+    border-radius: 7px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-top: 52px;
+    }
+    .basket { order: 2; }
+  }
+
+  /* ---------- stat strip ---------- */
+  .strip {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+  .strip .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+  .stat {
+    padding: 30px 22px 28px;
+    background: var(--surface-2);
+  }
+  .stat b {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: var(--step-3);
+    color: var(--ink);
+    display: block;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.01em;
+  }
+  .stat.hl b { color: var(--accent-deep); }
+  .stat span {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 4px;
+  }
+  @media (max-width: 820px) {
+    .strip .wrap { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- sections ---------- */
+  section.block { padding: 92px 0; }
+  section.block + section.block { border-top: 1px solid var(--line-soft); }
+
+  .section-head { max-width: 60ch; margin-bottom: 52px; }
+  .section-head h2 { font-size: var(--step-4); margin-bottom: 16px; }
+  .section-head p { color: var(--ink-soft); font-size: var(--step-1); margin: 0; }
+
+  .cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  @media (max-width: 880px) {
+    .cols-3, .cols-2 { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  .gap {
+    padding: 26px 24px;
+    border-left: 2px solid var(--accent);
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+  }
+  .gap h3 { font-size: var(--step-1); margin-bottom: 8px; }
+  .gap p { margin: 0; color: var(--ink-soft); font-size: var(--step--1); }
+
+  /* numbered steps */
+  .step {
+    padding-top: 24px;
+    border-top: 2px solid var(--ink);
+  }
+  .step .n {
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    color: var(--brand);
+    letter-spacing: .1em;
+  }
+  .step h3 { font-size: var(--step-2); margin: 12px 0 10px; }
+  .step p { margin: 0; color: var(--ink-soft); }
+
+  /* feature cards */
+  .feat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feat .ic {
+    width: 38px; height: 38px;
+    color: var(--brand);
+    margin-bottom: 6px;
+  }
+  .feat h3 { font-size: var(--step-1); }
+  .feat p { margin: 0; color: var(--ink-soft); font-size: var(--step--1); }
+  .feat .tag {
+    align-self: flex-start;
+    margin-top: 4px;
+    font-family: var(--f-mono);
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    padding: 3px 7px;
+  }
+
+  #new { background: var(--surface-2); }
+
+  /* sustainability */
+  .planet-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .planet-copy h2 { font-size: var(--step-4); margin-bottom: 16px; }
+  .planet-copy p { color: var(--ink-soft); margin: 0 0 20px; }
+  .planet-copy p.big { font-size: var(--step-1); }
+  .planet-copy p.small { font-size: var(--step--1); margin-bottom: 0; }
+  .cycle {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .cycle .row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .cycle .row:last-child { border-bottom: 0; }
+  .cycle .row b {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: var(--step-2);
+    color: var(--brand);
+    min-width: 3.4ch;
+    font-variant-numeric: tabular-nums;
+  }
+  .cycle .row span { color: var(--ink-soft); font-size: var(--step--1); }
+  @media (max-width: 880px) {
+    .planet-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* closing */
+  .closing {
+    text-align: center;
+    padding: 104px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .closing .quote {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: var(--step-4);
+    max-width: 20ch;
+    margin: 0 auto 14px;
+    line-height: 1.2;
+  }
+  .closing .quote .u {
+    color: var(--brand);
+    border-bottom: 3px solid var(--accent);
+  }
+  .closing p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto 32px; }
+  .closing .hero-actions { justify-content: center; }
+  .cities {
+    margin-top: 34px;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    letter-spacing: .02em;
+  }
+  .cities .now { color: var(--brand); }
+
+  /* footer */
+  footer {
+    background: var(--surface-2);
+    border-top: 1px solid var(--line);
+    padding: 54px 0 40px;
+    font-size: var(--step--1);
+  }
+  .foot-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand p { color: var(--ink-soft); max-width: 34ch; margin: 12px 0 0; }
+  .foot-cols { display: flex; gap: 60px; flex-wrap: wrap; }
+  .foot-cols h4 {
+    font-family: var(--f-mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .foot-cols a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    margin-bottom: 9px;
+  }
+  .foot-cols a:hover { color: var(--brand); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 24px;
+    color: var(--ink-soft);
+  }
+  .foot-note { max-width: 52ch; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .live::before { animation: none; }
+  }
+
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="mark"><span class="a">Madh</span><span class="b">Wai</span></a>
+    <nav>
+      <a href="#gap">The problem</a>
+      <a href="#how">How it works</a>
+      <a href="#vendors">For vendors</a>
+      <a href="#new">What's new</a>
+      <a href="#planet">Sustainability</a>
+    </nav>
+    <a href="#get" class="btn btn-primary">Order now</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <div class="wordmark"><span class="a">Madh</span><span class="b">Wai</span></div>
+      <svg class="smile" viewBox="0 0 210 40" fill="none" aria-hidden="true">
+        <path d="M6 8 C 55 44, 155 44, 204 8" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+      </svg>
+      <h1>Authentic street food in fifteen minutes &mdash; and a fair deal for the people who cook it.</h1>
+      <p class="lede">MadhWai puts India's street vendors on the map: one basket across many stalls for you, legal identity and digital payments for them.</p>
+      <div class="hero-actions">
+        <a href="#get" class="btn btn-primary">Get the app</a>
+        <a href="#vendors" class="btn btn-ghost">Partner as a vendor</a>
+      </div>
+      <p class="tagline">&ldquo;Where food brings us together.&rdquo;</p>
+    </div>
+
+    <div class="basket reveal">
+      <div class="basket-head">
+        <span>One basket &middot; 3 stalls</span>
+        <span class="live">Preparing</span>
+      </div>
+      <div class="stall">
+        <div class="dot">RC</div>
+        <div>
+          <div class="name">Ram&nbsp;Chandra Chole Bhature</div>
+          <div class="meta">Lajpat Nagar &middot; FSSAI verified</div>
+        </div>
+        <div class="price">&#8377;120</div>
+      </div>
+      <div class="stall">
+        <div class="dot">LD</div>
+        <div>
+          <div class="name">Lakshmi Dosa Corner</div>
+          <div class="meta">Amar Colony &middot; Hygiene 4.6</div>
+        </div>
+        <div class="price">&#8377;90</div>
+      </div>
+      <div class="stall">
+        <div class="dot">BT</div>
+        <div>
+          <div class="name">Bittu&nbsp;Tikki &amp; Chaat</div>
+          <div class="meta">Moolchand &middot; CoV #DL-4471</div>
+        </div>
+        <div class="price">&#8377;60</div>
+      </div>
+      <div class="basket-foot">
+        <span>Vendors keep &#8377;216 of &#8377;270</span>
+        <span class="eta">Arrives in 12 min</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="stat"><b>10M</b><span>street food vendors across India</span></div>
+      <div class="stat"><b>&#8377;8,000 Cr</b><span>spent on street food every day</span></div>
+      <div class="stat hl"><b>80%</b><span>of every bill stays with the vendor</span></div>
+      <div class="stat"><b>10&ndash;15 min</b><span>typical delivery, no dark kitchens</span></div>
+    </div>
+  </div>
+
+  <section class="block wrap" id="gap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The problem</p>
+      <h2>India runs on street food. The system was never built for the people making it.</h2>
+      <p>A vendor can sell to hundreds of customers a day and still be invisible to a bank, a landlord, or a government scheme. MadhWai closes three gaps at once.</p>
+    </div>
+    <div class="cols-3">
+      <div class="gap reveal">
+        <h3>No legal identity</h3>
+        <p>Without a Certificate of Vending, there is no proof of livelihood &mdash; so no loans, no insurance, no protection from eviction.</p>
+      </div>
+      <div class="gap reveal">
+        <h3>No payment record</h3>
+        <p>Cash in, cash out. Nothing a lender can read, and no cushion when a slow week or a health scare hits.</p>
+      </div>
+      <div class="gap reveal">
+        <h3>No route to customers</h3>
+        <p>Aggregators favour restaurants and dark kitchens. The stall two lanes away never shows up in the app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="how">
+    <div class="section-head reveal">
+      <p class="eyebrow">For customers</p>
+      <h2>Order from a street, not just a restaurant.</h2>
+      <p>Chaat from one stall, dosa from another, jalebi from a third &mdash; in a single order that reaches you before it goes cold.</p>
+    </div>
+    <div class="cols-3">
+      <div class="step reveal">
+        <span class="n">STEP 01</span>
+        <h3>Browse your locality</h3>
+        <p>See the verified stalls near you with real hygiene ratings, today's menu and live prep times.</p>
+      </div>
+      <div class="step reveal">
+        <span class="n">STEP 02</span>
+        <h3>Fill one basket</h3>
+        <p>Add items from several vendors at once. MadhWai batches the pickup so nothing arrives soggy.</p>
+      </div>
+      <div class="step reveal">
+        <span class="n">STEP 03</span>
+        <h3>Track to your door</h3>
+        <p>One rider, one route, 10&ndash;15 minutes. Pay by UPI; the vendor is settled the same day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="vendors">
+    <div class="section-head reveal">
+      <p class="eyebrow">For vendors</p>
+      <h2>Everything a stall needs to be treated like a business.</h2>
+      <p>Onboarding costs &#8377;1,000 once, with the first month free and EMI options. A field team handles the paperwork in your language.</p>
+    </div>
+    <div class="cols-3">
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg>
+        <h3>Certificate of Vending</h3>
+        <p>Registration under the Street Vendors Act, 2014, plus digital KYC and an MCD-issued CoV.</p>
+      </div>
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>FSSAI &amp; hygiene training</h3>
+        <p>Food-handling certification and a hygiene score customers can see &mdash; earned, not bought.</p>
+      </div>
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>
+        <h3>Same-day UPI settlement</h3>
+        <p>Money in the account by evening, and a statement that finally reads as income.</p>
+      </div>
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h3>Working-capital advances</h3>
+        <p>Small, short advances against your MadhWai sales history &mdash; through licensed NBFC partners.</p>
+      </div>
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h9M5 16h14"/><path d="M3 4h18v16H3z"/></svg>
+        <h3>Vendor app in your language</h3>
+        <p>Hindi, Bhojpuri, Bengali, Tamil and more &mdash; orders, stock and payouts, read aloud if you need.</p>
+      </div>
+      <div class="feat reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 4 3 5-7"/></svg>
+        <h3>Demand forecasts</h3>
+        <p>How much to prep tomorrow, adjusted for weather, festivals and last week's footfall.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="new">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What's new &middot; 2026</p>
+        <h2>A year on from the pilot, MadhWai does more.</h2>
+        <p>The Delhi NCR pilot taught us where vendors and customers needed more. These rolled out over the last twelve months.</p>
+      </div>
+      <div class="cols-3">
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>Listed on ONDC</h3>
+          <p>Every verified stall is now discoverable across ONDC buyer apps &mdash; more orders, same 20% commission.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>MadhWai for Business</h3>
+          <p>Bulk office lunches and event catering routed to clusters of nearby vendors, invoiced monthly.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>Weekly meal plans</h3>
+          <p>Subscribe to a rotating thali from vendors you like; they get predictable volume, you get a better price.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>Vendor credit score</h3>
+          <p>Consistent sales, hygiene and ratings build a portable score that partner lenders actually recognise.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>Compostable packaging</h3>
+          <p>Bagasse and paper containers supplied at cost, replacing single-use plastic across the network.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="tag">New</span>
+          <h3>Live order tracking</h3>
+          <p>Customers watch prep and pickup in real time; vendors see the rider arrive before food leaves the tawa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="planet">
+    <div class="planet-grid">
+      <div class="planet-copy reveal">
+        <p class="eyebrow">Sustainability</p>
+        <h2>The oil doesn't go down the drain.</h2>
+        <p class="big">On every delivery run, riders collect used cooking oil from vendors and carry it back for recycling into biodiesel. Vendors earn a small margin; the neighbourhood keeps its water clean.</p>
+        <p class="small">Paired with compostable packaging, it turns each order into a slightly smaller footprint rather than a larger one.</p>
+      </div>
+      <div class="cycle reveal">
+        <div class="row"><b>1 L</b><span>used cooking oil collected from a vendor</span></div>
+        <div class="row"><b>~0.9 L</b><span>biodiesel refined from it by our partners</span></div>
+        <div class="row"><b>0</b><span>litres tipped into drains and groundwater</span></div>
+        <div class="row"><b>&#8377;</b><span>resale margin shared back with the vendor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="get">
+    <div class="wrap">
+      <p class="quote">MadhWai delivers food &mdash; and <span class="u">dignity, identity and a fair share</span>.</p>
+      <p>Order authentic street food faster and cheaper than any quick-delivery app. Or bring your stall onto the platform and keep more of what you earn.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Get the customer app</a>
+        <a href="#" class="btn btn-ghost">Register your stall</a>
+      </div>
+      <p class="cities"><span class="now">Live now: Delhi NCR</span> &nbsp;&middot;&nbsp; Coming next: Jaipur, Lucknow, Indore, Pune</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="mark" style="font-size:1.15rem;"><span class="a">Madh</span><span class="b">Wai</span></a>
+        <p>Bringing India's 10 million street food vendors into the digital economy &mdash; one lane at a time.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Platform</h4>
+          <a href="#how">How it works</a>
+          <a href="#new">What's new</a>
+          <a href="#planet">Sustainability</a>
+        </div>
+        <div>
+          <h4>Vendors</h4>
+          <a href="#vendors">Become a partner</a>
+          <a href="#vendors">Legal &amp; FSSAI help</a>
+          <a href="#get">Vendor app</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-note">Market figures are drawn from MadhWai's 2024 concept note; pilot operations are in Delhi NCR. Vendor registration is facilitated under the Street Vendors Act, 2014.</span>
+      <span>&copy; 2026 MadhWai</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
