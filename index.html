@@ -46,37 +46,7 @@
     --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper:      #121712;
-      --surface:    #1A211A;
-      --surface-2:  #202821;
-      --ink:        #ECE6D4;
-      --ink-soft:   #A6B0A2;
-      --brand:      #57BC80;
-      --brand-deep: #93D6AC;
-      --accent:     #F4C430;
-      --accent-deep:#F7D66B;
-      --line:       #2E372E;
-      --line-soft:  #262E26;
-      --shadow:     18px 24px 48px -30px rgba(0,0,0,.7);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --paper:      #121712;
-    --surface:    #1A211A;
-    --surface-2:  #202821;
-    --ink:        #ECE6D4;
-    --ink-soft:   #A6B0A2;
-    --brand:      #57BC80;
-    --brand-deep: #93D6AC;
-    --accent:     #F4C430;
-    --accent-deep:#F7D66B;
-    --line:       #2E372E;
-    --line-soft:  #262E26;
-    --shadow:     18px 24px 48px -30px rgba(0,0,0,.7);
-  }
+  /* Light theme only, by design — no dark mode. */
 
   * { box-sizing: border-box; }
 
@@ -250,16 +220,14 @@
     letter-spacing: .02em;
   }
 
-  /* stacked stall cards */
-  .basket {
-    position: relative;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 22px;
-    box-shadow: var(--shadow);
+  /* hero illustration */
+  .hero-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .basket-head {
+  .hero-art svg { width: 100%; max-width: 320px; height: auto; }
+  .label-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -271,66 +239,6 @@
     padding-bottom: 14px;
     border-bottom: 1px dashed var(--line);
   }
-  .live {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--brand);
-  }
-  .live::before {
-    content: "";
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--brand);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 60%, transparent);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 55%, transparent); }
-    70% { box-shadow: 0 0 0 9px transparent; }
-    100% { box-shadow: 0 0 0 0 transparent; }
-  }
-  .stall {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .stall:last-of-type { border-bottom: 0; }
-  .dot {
-    width: 34px; height: 34px;
-    flex: none;
-    border-radius: 9px;
-    background: var(--surface-2);
-    border: 1px solid var(--line);
-    display: grid;
-    place-items: center;
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: .95rem;
-    color: var(--brand);
-  }
-  .stall .name { font-weight: 600; font-size: var(--step-0); }
-  .stall .meta { font-size: .78rem; color: var(--ink-soft); }
-  .stall .price { margin-left: auto; font-family: var(--f-mono); font-size: .84rem; }
-  .basket-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 16px;
-    padding-top: 15px;
-    border-top: 1px dashed var(--line);
-    font-family: var(--f-mono);
-    font-size: .82rem;
-  }
-  .basket-foot .eta {
-    background: var(--accent);
-    color: #1C2B22;
-    padding: 5px 11px;
-    border-radius: 7px;
-    font-weight: 500;
-  }
 
   @media (max-width: 900px) {
     .hero {
@@ -338,7 +246,7 @@
       gap: 40px;
       padding-top: 52px;
     }
-    .basket { order: 2; }
+    .hero-art { order: 2; }
   }
 
   /* ---------- stat strip ---------- */
@@ -439,18 +347,6 @@
   }
   .feat h3 { font-size: var(--step-1); }
   .feat p { margin: 0; color: var(--ink-soft); font-size: var(--step--1); }
-  .feat .tag {
-    align-self: flex-start;
-    margin-top: 4px;
-    font-family: var(--f-mono);
-    font-size: .68rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--accent-deep);
-    border: 1px solid var(--accent);
-    border-radius: 5px;
-    padding: 3px 7px;
-  }
 
   #roadmap { background: var(--surface-2); }
 
@@ -563,60 +459,11 @@
   }
   .foot-note { max-width: 52ch; }
 
-  /* static preview badge (no pulse — nothing is live yet) */
-  .preview {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--ink-soft);
-  }
-  .preview::before {
-    content: "";
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--ink-soft);
-  }
-
   .status-line {
     margin-top: 8px;
     font-size: var(--step--1);
     color: var(--ink-soft);
   }
-
-  /* roadmap stage tags */
-  .tag.near { color: var(--brand); border-color: var(--brand); }
-  .tag.long { color: var(--ink-soft); border-color: var(--line); }
-
-  /* card bullet lists (why us / why now) */
-  .card-list { margin: 14px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: var(--step--1); }
-  .card-list li { margin-bottom: 8px; }
-  .card-list li:last-child { margin-bottom: 0; }
-
-  /* founder story panel — intentionally always dark, like a pull-quote,
-     regardless of site theme. Do not use var(--brand-deep) here: it
-     flips to a light mint in dark mode and breaks contrast with the
-     cream text. */
-  .story {
-    background: #114429;
-    color: #FBF6EC;
-    border-radius: 18px;
-    padding: 44px clamp(20px, 5vw, 48px);
-  }
-  .story .quote {
-    font-family: var(--f-display);
-    font-weight: 600;
-    font-size: var(--step-2);
-    line-height: 1.35;
-    margin: 0 0 16px;
-  }
-  .story .quote-disclaimer {
-    font-size: var(--step--1);
-    opacity: .75;
-    font-style: italic;
-    margin: 0 0 26px;
-  }
-  .story p.body { margin: 0 0 16px; opacity: .95; }
-  .story p.reason { font-weight: 600; margin: 0; }
 
   /* stat strip layout */
   .strip .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
@@ -688,18 +535,17 @@
   .cols-3 > .reveal:nth-child(6) { transition-delay: 350ms; }
   .cols-3 > .reveal:nth-child(7) { transition-delay: 420ms; }
 
-  /* hero card: a slow, subtle float so the page doesn't feel static */
+  /* hero illustration: a slow, subtle float so the page doesn't feel static */
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-7px); }
   }
-  .basket.is-in { animation: float 6s ease-in-out 1s infinite; }
+  .hero-art.is-in svg { animation: float 6s ease-in-out 1s infinite; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .live::before { animation: none; }
-    .basket.is-in { animation: none; }
+    .hero-art.is-in svg { animation: none; }
   }
 
   :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
@@ -714,7 +560,7 @@
       <a href="#gap">The problem</a>
       <a href="#how">How it works</a>
       <a href="#vendors">For vendors</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#roadmap">What we offer</a>
       <a href="#planet">Sustainability</a>
     </nav>
     <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -735,42 +581,24 @@
         <a href="#contact" class="btn btn-ghost" data-role="Vendor">Partner as a vendor</a>
       </div>
       <p class="tagline">&ldquo;Where food brings us together.&rdquo;</p>
-      <p class="status-line">Customer, vendor and delivery apps are built &mdash; we're fixing issues ahead of a pilot in Noida &amp; Greater Noida.</p>
+      <p class="status-line">Our customer, vendor and delivery apps are in final testing ahead of a pilot in Noida &amp; Greater Noida.</p>
     </div>
 
-    <div class="basket reveal">
-      <div class="basket-head">
-        <span>One basket &middot; 3 stalls</span>
-        <span class="preview">Product preview</span>
-      </div>
-      <div class="stall">
-        <div class="dot">RC</div>
-        <div>
-          <div class="name">Ram&nbsp;Chandra Chole Bhature</div>
-          <div class="meta">Lajpat Nagar &middot; FSSAI verified</div>
-        </div>
-        <div class="price">&#8377;120</div>
-      </div>
-      <div class="stall">
-        <div class="dot">LD</div>
-        <div>
-          <div class="name">Lakshmi Dosa Corner</div>
-          <div class="meta">Amar Colony &middot; Hygiene 4.6</div>
-        </div>
-        <div class="price">&#8377;90</div>
-      </div>
-      <div class="stall">
-        <div class="dot">BT</div>
-        <div>
-          <div class="name">Bittu&nbsp;Tikki &amp; Chaat</div>
-          <div class="meta">Moolchand &middot; CoV #DL-4471</div>
-        </div>
-        <div class="price">&#8377;60</div>
-      </div>
-      <div class="basket-foot">
-        <span>Vendors keep &#8377;216 of &#8377;270</span>
-        <span class="eta">Arrives in 12 min</span>
-      </div>
+    <div class="hero-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 320 320">
+        <circle cx="160" cy="160" r="150" fill="#F5EEDD" />
+        <circle cx="160" cy="160" r="112" fill="none" stroke="#E4DAC4" stroke-width="1.5" stroke-dasharray="3 7" />
+        <circle cx="160" cy="42" r="7" fill="#F4C430" />
+        <circle cx="266" cy="112" r="6" fill="#1C6B3F" />
+        <circle cx="250" cy="238" r="6" fill="#1C6B3F" />
+        <circle cx="72" cy="234" r="6" fill="#F4C430" />
+        <circle cx="58" cy="108" r="6" fill="#1C6B3F" />
+        <path d="M98 176 a62 62 0 0 0 124 0 Z" fill="#1C6B3F" />
+        <rect x="93" y="170" width="134" height="11" rx="5.5" fill="#114429" />
+        <path d="M138 150 q-9 -15 0 -30" stroke="#CF9A16" stroke-width="4.5" fill="none" stroke-linecap="round" />
+        <path d="M160 150 q-9 -19 0 -38" stroke="#CF9A16" stroke-width="4.5" fill="none" stroke-linecap="round" />
+        <path d="M182 150 q-9 -15 0 -30" stroke="#CF9A16" stroke-width="4.5" fill="none" stroke-linecap="round" />
+      </svg>
     </div>
   </section>
 
@@ -778,11 +606,11 @@
     <div class="wrap">
       <div class="stat-grid">
         <div class="stat reveal"><b>10M</b><span>street vendors across India</span></div>
-        <div class="stat reveal"><b>5&ndash;10</b><span>vendors already lined up for our first pilot</span></div>
-        <div class="stat hl reveal"><b>80%</b><span>of every order proposed to stay with the vendor</span></div>
+        <div class="stat reveal"><b>3</b><span>connected apps: customer, vendor and delivery</span></div>
+        <div class="stat hl reveal"><b>80%</b><span>of every order goes straight to the vendor</span></div>
         <div class="stat reveal"><b>10&ndash;15 min</b><span>target delivery time, no dark kitchens</span></div>
       </div>
-      <p class="strip-note">Vendor count is an estimate from the Ministry of Housing &amp; Urban Poverty Alleviation, cited in Street Vendors Act, 2014 background material (government identification surveys have found fewer). The 80% figure and delivery time reflect MadhWai's proposed model and design targets, not measured results yet.</p>
+      <p class="strip-note">Vendor count: Ministry of Housing &amp; Urban Poverty Alleviation estimate. Revenue share and delivery time reflect our target model.</p>
     </div>
   </div>
 
@@ -805,18 +633,6 @@
         <h3>No route to customers</h3>
         <p>Aggregators favour restaurants and dark kitchens. The stall two lanes away never shows up in the app.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="block wrap" id="story">
-    <div class="section-head reveal">
-      <p class="eyebrow">Why MadhWai exists</p>
-    </div>
-    <div class="story reveal">
-      <p class="quote">&ldquo;A chhole bhature vendor whose food I loved had his cart dragged away and demolished while he was crying. He told me that even after paying bribes, the harassment never stopped.&rdquo;</p>
-      <p class="quote-disclaimer">This is Archit's personal, first-hand account &mdash; not a claim about any specific authority or system.</p>
-      <p class="body">What stayed with him wasn't the demolition. It was the contradiction: a vendor with food people genuinely loved &mdash; still entirely vulnerable, because his business lived and died by one physical cart, one location, and word of mouth.</p>
-      <p class="reason">That's why MadhWai builds in legal recognition (a Certificate of Vending) and protection from harassment &mdash; not delivery alone.</p>
     </div>
   </section>
 
@@ -888,72 +704,39 @@
   <section class="block" id="roadmap">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Roadmap</p>
+        <p class="eyebrow">What we offer</p>
         <h2>A vendor services platform, not just delivery.</h2>
         <p>Delivery is the entry point. It builds the vendor base and trust that legal, supply and finance layers grow from.</p>
       </div>
       <div class="cols-3">
         <div class="feat reveal">
-          <span class="tag">Pilot</span>
           <h3>Digital ordering &amp; delivery</h3>
           <p>Discovery, ordering and delivery for existing street-food vendors.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag near">Near-term</span>
           <h3>Legal recognition &amp; CoV</h3>
           <p>Assistance registering vendors and securing a Certificate of Vending under the Street Vendors Act.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag near">Near-term</span>
           <h3>Harassment protection</h3>
           <p>Formal recognition as a documented step against bribes and arbitrary eviction.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag near">Near-term</span>
           <h3>Hygiene &amp; FSSAI training</h3>
           <p>Food-safety compliance support and hygiene training, visible to customers as an earned score.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag long">Long-term</span>
           <h3>Raw-material supply</h3>
           <p>Pooled sourcing to cut vendor input costs.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag long">Long-term</span>
           <h3>UCO collection &amp; resale</h3>
           <p>Used cooking oil collected and resold for biodiesel.</p>
         </div>
         <div class="feat reveal">
-          <span class="tag long">Long-term</span>
           <h3>Vendor financing</h3>
           <p>Loans and working capital based on order history, through licensed partners.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block wrap" id="team">
-    <div class="section-head reveal">
-      <p class="eyebrow">Why us, why now</p>
-      <h2>Built by people close to the problem.</h2>
-    </div>
-    <div class="cols-2">
-      <div class="feat reveal">
-        <h3>Why us</h3>
-        <ul class="card-list">
-          <li><strong>Archit Gupta</strong> &mdash; product &amp; tech, building hands-on for ~2 years.</li>
-          <li><strong>Sahitya</strong> &mdash; operations; a village background that keeps us close to ground-level vendor reality.</li>
-          <li><strong>Tushar Singh</strong> &mdash; technology, learning and building alongside the team.</li>
-        </ul>
-      </div>
-      <div class="feat reveal">
-        <h3>Why now</h3>
-        <ul class="card-list">
-          <li>The Street Vendors Act, 2014 gives a legal basis for vendor recognition &mdash; implementation still varies.</li>
-          <li>UPI and smartphones have reached the vendor, not just the customer.</li>
-          <li>Quick-commerce has trained customers to expect fast, local ordering.</li>
-          <li>Open-source infrastructure makes a low-cost model viable for the first time.</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -967,7 +750,7 @@
         <p class="small">Paired with compostable packaging, the goal is for each order to leave a slightly smaller footprint rather than a larger one.</p>
       </div>
       <div class="cycle reveal">
-        <div class="basket-head" style="border-bottom:1px dashed var(--line); padding-bottom:10px; margin-bottom:6px;"><span>How it will work, once live</span></div>
+        <div class="label-row" style="margin-bottom:6px;"><span>How it will work, once live</span></div>
         <div class="row"><b>1 L</b><span>used cooking oil collected from a vendor</span></div>
         <div class="row"><b>~0.9 L</b><span>biodiesel refined from it by our partners</span></div>
         <div class="row"><b>0</b><span>litres tipped into drains and groundwater</span></div>
@@ -979,7 +762,7 @@
   <section class="closing" id="get">
     <div class="wrap">
       <p class="quote">MadhWai delivers food &mdash; and <span class="u">dignity, identity and a fair share</span>.</p>
-      <p>We're building toward our first 100 real orders. Join the waitlist as a customer, or bring your stall onto the platform and keep more of what you earn.</p>
+      <p>Join the waitlist as a customer, or bring your stall onto the platform and keep more of what you earn.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary" data-role="Customer">Join the waitlist</a>
         <a href="#contact" class="btn btn-ghost" data-role="Vendor">Register your stall</a>
@@ -1038,7 +821,7 @@
         <div>
           <h4>Platform</h4>
           <a href="#how">How it works</a>
-          <a href="#roadmap">Roadmap</a>
+          <a href="#roadmap">What we offer</a>
           <a href="#planet">Sustainability</a>
         </div>
         <div>
@@ -1049,13 +832,12 @@
         </div>
         <div>
           <h4>Company</h4>
-          <a href="#team">About</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="foot-note">Vendor count is an estimate from the Ministry of Housing &amp; Urban Poverty Alleviation, cited in Street Vendors Act, 2014 background material (government identification surveys have found fewer). Other figures reflect MadhWai's proposed model and design targets. Registration is facilitated under the Street Vendors Act, 2014.</span>
+      <span class="foot-note">Registration is facilitated under the Street Vendors Act, 2014.</span>
       <span>&copy; 2026 MadhWai</span>
     </div>
   </div>
