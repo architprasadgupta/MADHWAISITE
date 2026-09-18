@@ -188,7 +188,7 @@
     background: var(--brand);
     color: #FBF6EC;
   }
-  .btn-primary:hover { background: var(--brand-deep); transform: translateY(-1px); }
+  .btn-primary:hover { filter: brightness(.88); transform: translateY(-1px); }
   .btn-ghost {
     background: transparent;
     color: var(--ink);
@@ -573,9 +573,12 @@
   .card-list li { margin-bottom: 8px; }
   .card-list li:last-child { margin-bottom: 0; }
 
-  /* founder story panel */
+  /* founder story panel — intentionally always dark, like a pull-quote,
+     regardless of site theme. Do not use var(--brand-deep) here: it
+     flips to a light mint in dark mode and breaks contrast with the
+     cream text. */
   .story {
-    background: var(--brand-deep);
+    background: #114429;
     color: #FBF6EC;
     border-radius: 18px;
     padding: 44px clamp(20px, 5vw, 48px);
