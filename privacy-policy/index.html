@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — MadhWai</title>
+<meta name="description" content="How MadhWai collects, uses, shares and protects your information across our customer, vendor and delivery apps and website." />
+<link rel="canonical" href="https://madhwai.site/privacy-policy/" />
+<meta property="og:title" content="Privacy Policy — MadhWai" />
+<meta property="og:description" content="How MadhWai collects, uses, shares and protects your information across our customer, vendor and delivery apps and website." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://madhwai.site/privacy-policy/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Privacy Policy — MadhWai" />
+<meta name="twitter:description" content="How MadhWai collects, uses, shares and protects your information across our customer, vendor and delivery apps and website." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C6B3F'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23F4C430' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+  :root {
+    --paper:      #FBF6EC;
+    --surface:    #FFFFFF;
+    --surface-2:  #F5EEDD;
+    --ink:        #1C2B22;
+    --ink-soft:   #4C5B51;
+    --brand:      #1C6B3F;
+    --brand-deep: #114429;
+    --accent:     #F4C430;
+    --accent-deep:#CF9A16;
+    --line:       #E4DAC4;
+    --line-soft:  #EDE5D2;
+    --shadow:     18px 24px 48px -28px rgba(28,43,34,.45);
+
+    --maxw: 1140px;
+    --step--1: .84rem;
+    --step-0:  1rem;
+    --step-1:  1.15rem;
+    --step-2:  1.4rem;
+    --step-3:  1.85rem;
+    --step-4:  2.4rem;
+
+    --f-display: "Fraunces", Georgia, serif;
+    --f-body:    "Hanken Grotesk", system-ui, -apple-system, Segoe UI, sans-serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* Light theme only, by design — no dark mode. */
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  h1, h2, h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+  }
+  .mark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -.01em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .mark .a { color: var(--brand); }
+  .mark .b { color: var(--accent-deep); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .01em;
+    padding: 11px 20px;
+    border-radius: 9px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* ---------- policy content ---------- */
+  .policy-head {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .policy-head h1 {
+    font-size: var(--step-4);
+    margin-bottom: 18px;
+    max-width: 24ch;
+  }
+  .policy-head p.lede {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    max-width: 62ch;
+    margin: 0 0 22px;
+  }
+  .policy-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+  .policy-dates b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .policy-body { padding: 56px 0 100px; }
+  .policy-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 90px;
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+  }
+  .toc h4 {
+    font-family: var(--f-mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .toc a {
+    text-decoration: none;
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .toc a:hover { color: var(--brand); }
+
+  .policy-sections { max-width: 68ch; }
+  .policy-sections section {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line-soft);
+    scroll-margin-top: 90px;
+  }
+  .policy-sections section:first-child { padding-top: 0; }
+  .policy-sections section:last-child { border-bottom: 0; }
+
+  .policy-sections h2 {
+    font-size: var(--step-2);
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .policy-sections h2 .num {
+    font-family: var(--f-mono);
+    font-size: var(--step-0);
+    color: var(--brand);
+    font-weight: 500;
+  }
+  .policy-sections h3 {
+    font-size: var(--step-1);
+    margin: 22px 0 10px;
+  }
+  .policy-sections p {
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .policy-sections p:last-child { margin-bottom: 0; }
+  .policy-sections ul, .policy-sections ol.plain {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .policy-sections li { padding-left: 2px; }
+  .policy-sections strong { color: var(--ink); }
+  .policy-sections a.inline {
+    color: var(--brand);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 6px;
+  }
+  .contact-card p { margin: 0 0 8px; }
+  .contact-card p:last-child { margin-bottom: 0; }
+  .contact-card .label {
+    font-family: var(--f-mono);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .policy-layout { grid-template-columns: 1fr; gap: 28px; }
+    .toc { position: static; top: auto; }
+  }
+  @media (max-width: 620px) {
+    .policy-head { padding: 44px 0 30px; }
+    .policy-body { padding: 36px 0 70px; }
+  }
+
+  /* ---------- footer (shared with home page) ---------- */
+  footer {
+    background: var(--surface-2);
+    border-top: 1px solid var(--line);
+    padding: 54px 0 40px;
+    font-size: var(--step--1);
+  }
+  .foot-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand p { color: var(--ink-soft); max-width: 34ch; margin: 12px 0 0; }
+  .foot-cols { display: flex; gap: 60px; flex-wrap: wrap; }
+  .foot-cols h4 {
+    font-family: var(--f-mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .foot-cols a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    margin-bottom: 9px;
+  }
+  .foot-cols a:hover { color: var(--brand); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 24px;
+    color: var(--ink-soft);
+  }
+  .foot-note { max-width: 52ch; }
+
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="/" class="mark"><span class="a">Madh</span><span class="b">Wai</span></a>
+    <a href="/" class="btn btn-ghost">&larr; Back to home</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="policy-head wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">This Privacy Policy explains what information MadhWai collects through its website and its customer, vendor and delivery-partner apps, how that information is used and shared, and the choices you have.</p>
+    <div class="policy-dates">
+      <span>Effective date: <b>October 2, 2026</b></span>
+      <span>Last updated: <b>October 2, 2026</b></span>
+    </div>
+  </div>
+
+  <div class="policy-body wrap">
+    <div class="policy-layout">
+      <nav class="toc" aria-label="Sections in this policy">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#introduction">1. Introduction</a></li>
+          <li><a href="#information-we-collect">2. Information we collect</a></li>
+          <li><a href="#how-we-use">3. How we use information</a></li>
+          <li><a href="#how-we-share">4. How we share information</a></li>
+          <li><a href="#payments">5. Payments &amp; financial information</a></li>
+          <li><a href="#location">6. Location permissions</a></li>
+          <li><a href="#notifications">7. Notifications</a></li>
+          <li><a href="#cookies">8. Cookies &amp; local storage</a></li>
+          <li><a href="#retention">9. Data retention</a></li>
+          <li><a href="#security">10. Data security</a></li>
+          <li><a href="#rights">11. Your rights &amp; choices</a></li>
+          <li><a href="#deletion">12. Account &amp; data deletion</a></li>
+          <li><a href="#children">13. Children's privacy</a></li>
+          <li><a href="#third-party">14. Third-party services &amp; links</a></li>
+          <li><a href="#changes">15. Changes to this policy</a></li>
+          <li><a href="#contact">16. Contact us</a></li>
+        </ol>
+      </nav>
+
+      <div class="policy-sections">
+
+        <section id="introduction">
+          <h2><span class="num">1.</span> Introduction</h2>
+          <p>MadhWai ("MadhWai", "we", "us" or "our") operates the madhwai.site website and a set of connected mobile applications — a customer app for ordering food, a vendor app for street-food sellers, and a delivery-partner app — together referred to as the "Services".</p>
+          <p>This Privacy Policy describes how we collect, use, disclose and protect information when you visit our website, create an account, place or fulfil an order, register a stall, or otherwise interact with the Services. It applies to customers, vendors and delivery partners alike, except where a section is marked as applying to a specific role.</p>
+          <p>By using the Services, you agree to the collection and use of information as described in this policy. If you do not agree, please do not use the Services.</p>
+        </section>
+
+        <section id="information-we-collect">
+          <h2><span class="num">2.</span> Information we collect</h2>
+          <p>We collect information that you provide directly, information generated through your use of the Services, and limited information from your device. We only collect what is reasonably needed to operate the Services described on this page.</p>
+
+          <h3>2.1 Account and profile information</h3>
+          <p>When you create an account, we collect information such as your name, phone number, email address and a password or other sign-in credential. Vendor and delivery-partner accounts may also require a profile photo and identity details needed to verify who you are.</p>
+
+          <h3>2.2 Contact information</h3>
+          <p>We collect contact details — such as phone number, email address and delivery address — so we can communicate with you about your account or orders, and so delivery partners can reach you or the vendor.</p>
+
+          <h3>2.3 Location information</h3>
+          <p>With your permission, the customer app uses your device's location to show you nearby stalls and to set your delivery address. The delivery-partner app uses location to route an order and to let a customer or vendor track an in-progress delivery. See <a href="#location" class="inline">Section 6</a> for details on how location permission works and how to control it.</p>
+
+          <h3>2.4 Device and technical information</h3>
+          <p>We collect limited technical information needed to run the app reliably, such as device type, operating system version, app version, language setting, and basic crash or error logs.</p>
+
+          <h3>2.5 App usage information</h3>
+          <p>We collect information about how you use the app — such as pages or screens viewed, searches, items added to a basket, and features used — to help us understand what is working and to fix problems.</p>
+
+          <h3>2.6 Order and transaction information</h3>
+          <p>We collect information about the orders you place or fulfil: items ordered, order value, order status and timestamps, delivery address, order history, and ratings or feedback you choose to leave.</p>
+
+          <h3>2.7 Vendor information</h3>
+          <p>For vendors, we collect business and stall information needed to list and operate on the platform — such as stall name and location, menu and pricing, documents related to registration or food-safety compliance that you choose to share with us (for example, in connection with a Certificate of Vending or FSSAI registration), and bank or UPI details needed to settle payments owed to you.</p>
+
+          <h3>2.8 Communications and support information</h3>
+          <p>When you contact us — for example through the website contact form, in-app support, or email — we collect what you submit (such as your name, email address, role, and message) so we can respond to you.</p>
+        </section>
+
+        <section id="how-we-use">
+          <h2><span class="num">3.</span> How we use information</h2>
+          <p>We use the information described above to:</p>
+          <ul>
+            <li>Create and maintain your account and verify who you are;</li>
+            <li>Operate core features — discovering nearby stalls, placing and fulfilling orders, routing deliveries, and processing payments and payouts;</li>
+            <li>Communicate with you about orders, account activity, support requests, and material changes to the Services;</li>
+            <li>Maintain safety and trust on the platform, including verifying vendor registration and food-safety information you provide;</li>
+            <li>Monitor, debug, and improve the reliability and performance of the Services;</li>
+            <li>Detect, investigate and prevent fraud, abuse, and activity that violates our terms; and</li>
+            <li>Meet legal, tax, accounting and regulatory obligations.</li>
+          </ul>
+          <p>We do not use the information described in this policy to make automated decisions that produce legal or similarly significant effects on you without human involvement.</p>
+        </section>
+
+        <section id="how-we-share">
+          <h2><span class="num">4.</span> How we share information</h2>
+          <p>We do not sell your personal information. We share information only as needed to operate the Services, as described below.</p>
+
+          <h3>4.1 Vendors</h3>
+          <p>When you place an order, we share the information the vendor needs to prepare it — such as items ordered, special instructions, and your first name — with the relevant vendor(s).</p>
+
+          <h3>4.2 Delivery partners</h3>
+          <p>To fulfil an order, we share the pickup location (vendor stall), delivery address, order contents, and contact details needed for handoff with the assigned delivery partner.</p>
+
+          <h3>4.3 Payment processors</h3>
+          <p>Payments are handled by third-party, licensed payment processors (for example, to process UPI or other online payment methods). We share the information needed to process a transaction — such as order amount and a reference ID — with these processors. See <a href="#payments" class="inline">Section 5</a>.</p>
+
+          <h3>4.4 Service providers</h3>
+          <p>We may share information with vendors and contractors who perform services on our behalf — such as cloud hosting, customer support tooling, and SMS/email delivery for OTPs or notifications — under confidentiality and data-protection obligations, and only to the extent needed to perform those services.</p>
+
+          <h3>4.5 Legal and regulatory authorities</h3>
+          <p>We may disclose information if required to do so by law, or if we believe in good faith that disclosure is reasonably necessary to comply with a legal process, enforce our terms, protect the rights, property or safety of MadhWai, our users or the public, or respond to a government or regulatory request.</p>
+
+          <p>If vendor financing, working-capital or similar credit products become available on the platform, relevant order and payment history may be shared with a licensed lending partner (such as an NBFC) for credit assessment — but only with your consent at the time such a product is offered.</p>
+        </section>
+
+        <section id="payments">
+          <h2><span class="num">5.</span> Payments and financial information</h2>
+          <p>We do not store full payment card numbers, UPI PINs, or banking passwords. Payments are processed by third-party, licensed payment gateways and processors, who handle and secure your payment credentials under their own security standards and applicable regulation. We retain only the transaction records needed for order history, vendor settlement, support, accounting, and tax purposes — such as order amount, payment status, and a transaction reference.</p>
+          <p>Vendor payouts are settled to the bank account or UPI ID the vendor provides to us; we use this information solely to pay out amounts owed for completed orders.</p>
+        </section>
+
+        <section id="location">
+          <h2><span class="num">6.</span> Location permissions</h2>
+          <p>The customer app requests location permission so it can show nearby vendors and pre-fill your delivery address. The delivery-partner app requests location permission so it can receive route guidance and share live delivery status with the customer and vendor for the duration of an active delivery.</p>
+          <p>You can grant, deny, or withdraw location permission at any time from your device's operating-system settings. If you deny or withdraw location permission, the app will ask you to enter your delivery address manually, and features that depend on live location — such as nearby-stall discovery or live delivery tracking — may be limited or unavailable.</p>
+        </section>
+
+        <section id="notifications">
+          <h2><span class="num">7.</span> Notifications</h2>
+          <p>With your permission, we send push notifications for things like order confirmations, order-status updates, and delivery updates. We may also send account- or security-related notifications (for example, an OTP for sign-in) where applicable.</p>
+          <p>You can turn push notifications on or off at any time from your device's operating-system settings. Disabling notifications will not affect your ability to use the app, though you may need to check order status manually within the app.</p>
+        </section>
+
+        <section id="cookies">
+          <h2><span class="num">8.</span> Cookies, local storage &amp; similar technologies</h2>
+          <p>Our mobile apps use local, on-device storage to keep you signed in and to remember basic preferences (such as your last-used delivery address) between sessions. This data stays on your device and is cleared if you log out or uninstall the app.</p>
+          <p>Our website (madhwai.site) does not currently set tracking or advertising cookies. If this changes — for example, if we introduce analytics or marketing cookies — we will update this section and, where required, ask for your consent.</p>
+        </section>
+
+        <section id="retention">
+          <h2><span class="num">9.</span> Data retention</h2>
+          <p>We retain personal information for as long as your account is active and as needed to provide the Services. After you close your account or request deletion, we retain a limited set of records — such as transaction and payout records — for as long as required to meet our legal, tax, accounting, or dispute-resolution obligations, after which it is deleted or anonymised.</p>
+        </section>
+
+        <section id="security">
+          <h2><span class="num">10.</span> Data security</h2>
+          <p>We use reasonable administrative, technical and organisational measures intended to protect your information — including access controls and encryption of data in transit — appropriate to the sensitivity of the information involved. No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If we become aware of a breach affecting your personal information, we will take appropriate steps to address it and notify affected users and authorities where required by law.</p>
+        </section>
+
+        <section id="rights">
+          <h2><span class="num">11.</span> Your rights and choices</h2>
+          <p>Depending on your location and applicable law, you may have rights to:</p>
+          <ul>
+            <li>Access the personal information we hold about you;</li>
+            <li>Correct inaccurate or incomplete information, most of which you can update directly in your profile;</li>
+            <li>Request deletion of your account and associated personal information (see <a href="#deletion" class="inline">Section 12</a>);</li>
+            <li>Withdraw consent for optional features such as location access or notifications, through your device settings;</li>
+            <li>Opt out of non-essential communications from us.</li>
+          </ul>
+          <p>To exercise any of these rights, contact us using the details in <a href="#contact" class="inline">Section 16</a>. We will respond within a reasonable time and may need to verify your identity before acting on a request.</p>
+        </section>
+
+        <section id="deletion">
+          <h2><span class="num">12.</span> Account and data deletion</h2>
+          <p>You may request deletion of your account and associated personal information at any time by contacting us at the email in <a href="#contact" class="inline">Section 16</a> with the subject line "Account deletion request", using the email address or phone number linked to your account.</p>
+          <p>Once verified, we will delete your personal information except for records we are legally required to keep — such as transaction, tax and payout records relevant to completed orders — which we retain only for as long as required by law and then delete or anonymise.</p>
+        </section>
+
+        <section id="children">
+          <h2><span class="num">13.</span> Children's privacy</h2>
+          <p>The Services are intended for use by individuals who are at least 18 years old and legally capable of entering into a binding contract under Indian law. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us using the details in <a href="#contact" class="inline">Section 16</a> so we can investigate and, if appropriate, delete the information.</p>
+        </section>
+
+        <section id="third-party">
+          <h2><span class="num">14.</span> Third-party services and links</h2>
+          <p>We rely on select third parties to operate the Services — for example, payment processors (<a href="#payments" class="inline">Section 5</a>) and infrastructure or communication providers used to send OTPs, emails, or host our systems. These providers process information only as needed to provide their service to us and are subject to their own privacy policies.</p>
+          <p>Our website or apps may occasionally link to third-party sites or services (for example, app-store listings). We are not responsible for the privacy practices of third-party sites, and we encourage you to review their privacy policies before providing information to them.</p>
+        </section>
+
+        <section id="changes">
+          <h2><span class="num">15.</span> Changes to this Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time as the Services evolve. We will revise the "Last updated" date at the top of this page whenever we make changes, and for material changes we will provide a more prominent notice — such as an in-app notification or a notice on our website — before the change takes effect.</p>
+        </section>
+
+        <section id="contact">
+          <h2><span class="num">16.</span> Contact us</h2>
+          <p>If you have questions about this Privacy Policy, or want to exercise any of the rights described above, please contact us:</p>
+          <div class="contact-card">
+            <p class="label">Email</p>
+            <p><a class="inline" href="mailto:privacy@madhwai.site">privacy@madhwai.site</a></p>
+            <p class="label" style="margin-top:14px;">Website</p>
+            <p><a class="inline" href="https://madhwai.site/">madhwai.site</a></p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="/" class="mark" style="font-size:1.15rem;"><span class="a">Madh</span><span class="b">Wai</span></a>
+        <p>Digital commerce infrastructure for India's street-food economy &mdash; starting with the vendors already serving your neighbourhood.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Platform</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#roadmap">What we offer</a>
+          <a href="/#planet">Sustainability</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/#contact">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-note">Registration is facilitated under the Street Vendors Act, 2014.</span>
+      <span>&copy; 2026 MadhWai</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
