@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Delete Your Account — MadhWai</title>
+<meta name="description" content="How to request deletion of your MadhWai account and data - for customers, vendors and delivery partners." />
+<link rel="canonical" href="https://madhwai.site/delete-account/" />
+<meta property="og:title" content="Delete Your Account — MadhWai" />
+<meta property="og:description" content="How to request deletion of your MadhWai account and data - for customers, vendors and delivery partners." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://madhwai.site/delete-account/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Delete Your Account — MadhWai" />
+<meta name="twitter:description" content="How to request deletion of your MadhWai account and data - for customers, vendors and delivery partners." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C6B3F'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23F4C430' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+  :root {
+    --paper:      #FBF6EC;
+    --surface:    #FFFFFF;
+    --surface-2:  #F5EEDD;
+    --ink:        #1C2B22;
+    --ink-soft:   #4C5B51;
+    --brand:      #1C6B3F;
+    --brand-deep: #114429;
+    --accent:     #F4C430;
+    --accent-deep:#CF9A16;
+    --line:       #E4DAC4;
+    --line-soft:  #EDE5D2;
+    --shadow:     18px 24px 48px -28px rgba(28,43,34,.45);
+
+    --maxw: 1140px;
+    --step--1: .84rem;
+    --step-0:  1rem;
+    --step-1:  1.15rem;
+    --step-2:  1.4rem;
+    --step-3:  1.85rem;
+    --step-4:  2.4rem;
+
+    --f-display: "Fraunces", Georgia, serif;
+    --f-body:    "Hanken Grotesk", system-ui, -apple-system, Segoe UI, sans-serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* Light theme only, by design — no dark mode. */
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  h1, h2, h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+  }
+  .mark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -.01em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .mark .a { color: var(--brand); }
+  .mark .b { color: var(--accent-deep); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .01em;
+    padding: 11px 20px;
+    border-radius: 9px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* ---------- policy content ---------- */
+  .policy-head {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .policy-head h1 {
+    font-size: var(--step-4);
+    margin-bottom: 18px;
+    max-width: 24ch;
+  }
+  .policy-head p.lede {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    max-width: 62ch;
+    margin: 0 0 22px;
+  }
+  .policy-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+  .policy-dates b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .policy-body { padding: 56px 0 100px; }
+  .policy-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 90px;
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+  }
+  .toc h4 {
+    font-family: var(--f-mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .toc a {
+    text-decoration: none;
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .toc a:hover { color: var(--brand); }
+
+  .policy-sections { max-width: 68ch; }
+  .policy-sections section {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line-soft);
+    scroll-margin-top: 90px;
+  }
+  .policy-sections section:first-child { padding-top: 0; }
+  .policy-sections section:last-child { border-bottom: 0; }
+
+  .policy-sections h2 {
+    font-size: var(--step-2);
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .policy-sections h2 .num {
+    font-family: var(--f-mono);
+    font-size: var(--step-0);
+    color: var(--brand);
+    font-weight: 500;
+  }
+  .policy-sections h3 {
+    font-size: var(--step-1);
+    margin: 22px 0 10px;
+  }
+  .policy-sections p {
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .policy-sections p:last-child { margin-bottom: 0; }
+  .policy-sections ul, .policy-sections ol.plain {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .policy-sections li { padding-left: 2px; }
+  .policy-sections strong { color: var(--ink); }
+  .policy-sections a.inline {
+    color: var(--brand);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 6px;
+  }
+  .contact-card p { margin: 0 0 8px; }
+  .contact-card p:last-child { margin-bottom: 0; }
+  .contact-card .label {
+    font-family: var(--f-mono);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .policy-layout { grid-template-columns: 1fr; gap: 28px; }
+    .toc { position: static; top: auto; }
+  }
+  @media (max-width: 620px) {
+    .policy-head { padding: 44px 0 30px; }
+    .policy-body { padding: 36px 0 70px; }
+  }
+
+  /* ---------- footer (shared with home page) ---------- */
+  footer {
+    background: var(--surface-2);
+    border-top: 1px solid var(--line);
+    padding: 54px 0 40px;
+    font-size: var(--step--1);
+  }
+  .foot-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand p { color: var(--ink-soft); max-width: 34ch; margin: 12px 0 0; }
+  .foot-cols { display: flex; gap: 60px; flex-wrap: wrap; }
+  .foot-cols h4 {
+    font-family: var(--f-mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .foot-cols a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    margin-bottom: 9px;
+  }
+  .foot-cols a:hover { color: var(--brand); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 24px;
+    color: var(--ink-soft);
+  }
+  .foot-note { max-width: 52ch; }
+
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="/" class="mark"><span class="a">Madh</span><span class="b">Wai</span></a>
+    <a href="/" class="btn btn-ghost">&larr; Back to home</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="policy-head wrap">
+    <p class="eyebrow">Account</p>
+    <h1>Delete your MadhWai account</h1>
+    <p class="lede">Customers, vendors and delivery partners can ask us to delete their account and personal data. This applies to the MadhWai customer app, the MadhWai vendor app (MadhWai for Vendors) and the MadhWai delivery-partner app.</p>
+    <div class="policy-dates">
+      <span>Last updated: <b>October 3, 2026</b></span>
+    </div>
+  </div>
+
+  <div class="policy-body wrap">
+    <div class="policy-layout" style="grid-template-columns:1fr;">
+      <div class="policy-sections">
+
+        <section id="how-to-request">
+          <h2><span class="num">1.</span> How to request deletion</h2>
+          <ol class="plain">
+            <li>Send an email to <a class="inline" href="mailto:architprasadgupta@gmail.com?subject=Account%20deletion%20request&amp;body=Phone%20number%20linked%20to%20my%20account%3A%0AApp%20(Customer%20%2F%20Vendor%20%2F%20Delivery%20partner)%3A%0AFull%20name%3A%0A%0APlease%20delete%20my%20MadhWai%20account%20and%20associated%20data.">architprasadgupta@gmail.com</a>.</li>
+            <li>Use the subject line <strong>Account deletion request</strong>.</li>
+            <li>In the email, include the <strong>phone number linked to your account</strong>, your <strong>full name</strong>, and which app you use (customer, vendor or delivery partner).</li>
+            <li>We may contact you to confirm the request is really from you before we delete anything.</li>
+            <li>Once confirmed, we delete your account and data within <strong>30 days</strong> and email you when it is done.</li>
+          </ol>
+          <div class="contact-card">
+            <p class="label">Send your request to</p>
+            <p><a class="inline" href="mailto:architprasadgupta@gmail.com?subject=Account%20deletion%20request">architprasadgupta@gmail.com</a></p>
+          </div>
+        </section>
+
+        <section id="what-we-delete">
+          <h2><span class="num">2.</span> Data we delete</h2>
+          <ul>
+            <li>Your account and profile information (name, phone number, email address, profile photo);</li>
+            <li>Saved delivery addresses and location information;</li>
+            <li>For vendors: stall details, menu and pricing, photos, registration or food-safety documents you uploaded, and bank or UPI payout details;</li>
+            <li>For delivery partners: profile and identity details you provided for verification;</li>
+            <li>Device identifiers used for push notifications, and app usage information linked to your account;</li>
+            <li>Support messages and other communications linked to your account.</li>
+          </ul>
+        </section>
+
+        <section id="what-we-keep">
+          <h2><span class="num">3.</span> Data we may keep, and for how long</h2>
+          <p>We keep only the records we are legally required to keep: transaction, payment, tax and payout records for completed orders. We retain these only for as long as Indian tax, accounting and dispute-resolution rules require, and then delete or anonymise them. We do not use these records for any other purpose.</p>
+        </section>
+
+        <section id="timeline">
+          <h2><span class="num">4.</span> Timeline</h2>
+          <p>After your request is verified, deletion is completed within 30 days. Deleting your account is permanent. You will lose your order history, saved addresses and, for vendors, your stall listing, and this cannot be undone. If you want to use MadhWai again later, you will need to create a new account.</p>
+        </section>
+
+        <section id="more">
+          <h2><span class="num">5.</span> More information</h2>
+          <p>For how we collect, use and protect your information, read our <a class="inline" href="/privacy-policy/">Privacy Policy</a>.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="/" class="mark" style="font-size:1.15rem;"><span class="a">Madh</span><span class="b">Wai</span></a>
+        <p>Digital commerce infrastructure for India's street-food economy &mdash; starting with the vendors already serving your neighbourhood.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Platform</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#roadmap">What we offer</a>
+          <a href="/#planet">Sustainability</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/#contact">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/delete-account/">Delete Account</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-note">Registration is facilitated under the Street Vendors Act, 2014.</span>
+      <span>&copy; 2026 MadhWai</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
